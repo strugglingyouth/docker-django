@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'web_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['DB_DEFAULT'],
+        'NAME': 'main',
         'USER': 'root',
         'PASSWORD': 'mysqlpassword',
         'HOST': 'mysql',

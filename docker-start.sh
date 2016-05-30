@@ -1,8 +1,14 @@
 #!/bin/bash
 
-./mysql/start.sh
-./redis/start.sh
-cd ./web
+cd mysql
 ./start.sh
+
+cd ../redis
+./start.sh
+
+cd ../web
+./start.sh
+./init_django.sh
+
 cd ../nginx
 ./start.sh

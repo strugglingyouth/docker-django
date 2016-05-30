@@ -1,7 +1,9 @@
+#!/usr/bin/env bash
 docker run --name mysql \
 -e MYSQL_ROOT_PASSWORD=mysqlpassword \
--p 3306:3306 \
--d mysql:5.6.30
-sleep 10
-docker exec -d mysql mysql -h 192.168.99.100 -uroot -pmysqlpassword -e "create database main"
+-p 3307:3306 \
+-d mysql:5.6.30 \
+--character-set-server=utf8 --collation-server=utf8_unicode_ci
+sleep 15
+docker exec -d mysql mysql -pmysqlpassword -e "create database main"
 
