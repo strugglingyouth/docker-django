@@ -1,4 +1,7 @@
 Django==1.8.12
+django-ckeditor==5.0.3
+django-redis==4.4.3
 gunicorn==19.4.5
 MySQL-python==1.2.5
+Pillow==3.2.0
 redis==2.10.5

@@ -37,6 +37,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'ckeditor',
+    'ckeditor_uploader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -92,12 +95,24 @@ DATABASES = {
     },
 }
 
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://redis:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-cn'
+TIME_ZONE = 'Asia/Shanghai'
+DEFAULT_CHARSET = 'UTF-8'
 
 USE_I18N = True
 
@@ -110,3 +125,31 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+# print(STATICFILES_DIRS)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# OSS_ACCESS_KEY_ID = 'i50YMolWigOk3t1M'
+# OSS_SECRET_ACCESS_KEY = 'TFezXtwcNnqqmKXhhaEZdvszwJsjpW'
+# OSS_HOST = 'oss-cn-hangzhou-internal.aliyuncs.com'
+# OSS_STORAGE_BUCKET_NAME = '7mud'
+#
+# DEFAULT_FILE_STORAGE = 'aliyun_oss.backends.ossplugin.OSSStorage'
+# STATICFILES_STORAGE = 'aliyun_oss.backends.ossplugin.OSSStorage'
+
+MEDIA_ROOT = 'media/'
+
+MEDIA_URL = '/media/'
+
+CKEDITOR_UPLOAD_PATH = "uploads"
+
+CKEDITOR_CONFIGS = {
+  'default': {
+      'toolbar': 'full',
+      'width': 960,
+      'height': 380,
+      "removePlugins": "stylesheetparser",
+  },
+}
