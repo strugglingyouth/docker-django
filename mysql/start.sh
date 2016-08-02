@@ -8,4 +8,3 @@ docker run --name mysql \
 -d daocloud.io/mysql:5.6.30 \
 --character-set-server=utf8 --collation-server=utf8_unicode_ci
 sleep 15
-docker exec -d mysql mysql -uroot -p123456  blog < blog.sql 
