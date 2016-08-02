@@ -1,5 +1,5 @@
 #!/bin/bash 
-
+#
 docker build -t nginx .
 docker run --name nginx-server \
 --link django:web \

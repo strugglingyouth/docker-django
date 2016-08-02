@@ -1,6 +1,7 @@
 #!/bin/bash 
+#
 docker exec -d mysql mysql -uroot -p123456 -e "create database blog;"
-docker exec -d mysql mysql -uroot -p123456  blog < blog.sql 
+#docker exec -d mysql mysql -uroot -p123456  blog < blog.sql 
 docker build -t feiyu/django-app .
 docker run --name django \
 -v /usr/src/myblog \

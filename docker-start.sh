@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 cd mysql  
 echo "start mysql----------------"
 ./start.sh
@@ -11,7 +11,7 @@ echo "start redis---------------------"
 cd ../web 
 echo "start web ---------------------"
 ./start.sh
-./init_django.sh
+#./init_django.sh
 
 cd ../nginx
 echo "start nginx-------------------"
